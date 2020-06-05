@@ -31,11 +31,12 @@ class Consultants(models.Model):
 class Category(models.Model):
     name = models.CharField(max_length=100)
     description = models.CharField(max_length=40)
-    pub_date = models.DateTimeField('publish date')
+    pub_date = models.DateTimeField('publish date',auto_now_add=True)
+ 
 
 
 class Field(models.Model):
     name = models.CharField(max_length=100)
     description = models.CharField(max_length=40)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    pub_date = models.DateTimeField('publish date')
+    pub_date = models.DateTimeField('publish date',auto_now_add=True)

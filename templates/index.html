@@ -1,0 +1,16 @@
+
+{% extends 'base.html' %}
+{% block content %}
+<div> index.html  hey !!  
+
+
+    {% for field in object_list.fields %}
+     <li> {{ field.name }} 1 </li>
+    {% endfor %}
+     {% for cat in object_list.category %}
+     <li> {{ cat.name }} 1 </li>
+    {% endfor %}
+    {{ object_list }}
+    
+</div>
+{% endblock %}

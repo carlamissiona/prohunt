@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include,path
+from .sitepages.pages import pages 
+from .sitepages.users import logged 
 
 urlpatterns = [
-    path('appsite/admin', admin.site.urls , name='adminap'),
+    path('site/logged', logged.HomeView.as_view() ),
 ]
