@@ -13,7 +13,10 @@ class HomeView(ListView):
     model = Field
     def get_queryset(self):
     	#google.googlemain()
+    	#Feature before accessing home call google authentication 
+    	#Feature but google logged in must be the email of the registered user 
 
     	query_objects = { 'fields' : Field.objects.all() , 'category' : Category.objects.all() , }
     	return query_objects
+
  

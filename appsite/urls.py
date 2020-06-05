@@ -15,9 +15,20 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include,path
+from rest_framework import routers
 from .sitepages.pages import pages 
 from .sitepages.users import logged 
+from .rest import api 
+
+
+router = routers.DefaultRouter()
+router.register(r'/fields', api.FieldViewSet)
+router.register(r'/user', api.UsersViewSet)
 
 urlpatterns = [
-    path('site/logged', logged.HomeView.as_view() ),
+    path('user', logged.HomeView.as_view() ),
+    path('api',  include(router.urls)),
+
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'),)
+
 ]
