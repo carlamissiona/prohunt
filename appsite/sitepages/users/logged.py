@@ -8,11 +8,11 @@ from appsite import google
 
 
 class HomeView(ListView):
-    template_name = 'index.html'
+    template_name = 'home.html'
     context_object_name = 'object_list'
     model = Field
     def get_queryset(self):
-    	#google.googlemain()
+    	google.googlemain()
     	#Feature before accessing home call google authentication 
     	#Feature but google logged in must be the email of the registered user 
 

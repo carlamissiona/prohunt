@@ -27,8 +27,8 @@ router.register(r'/user', api.UsersViewSet)
 
 urlpatterns = [
     path('user', logged.HomeView.as_view() ),
+    path('', pages.indexpage),
     path('api',  include(router.urls)),
-
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework'),)
 
 ]
