@@ -36,7 +36,16 @@ def googlemain():
         # Save the credentials for the next run
         with open('token.pickle', 'wb') as token:
             pickle.dump(creds, token)
+        print('printing creds')    
+        print(creds) 
+        service = build('gmail', 'v1', credentials=creds)
 
+        Call the Gmail API
+        results = service.users().labels().list(userId='me').execute() 
+        print('printing creds')    
+
+        print(service.users()) 
+        print(results) 
     return True
     #
     # service = build('gmail', 'v1', credentials=creds)
