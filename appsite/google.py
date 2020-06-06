@@ -5,6 +5,7 @@ import os.path
 from googleapiclient.discovery import build
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
+import pprint
 
 
 
@@ -14,6 +15,9 @@ from google.auth.transport.requests import Request
 SCOPES = ['https://www.googleapis.com/auth/gmail.readonly']
 
 def googlemain():
+    plog = pprint.PrettyPrinter(indent=4)
+
+   
     """Shows basic usage of the Gmail API.
     Lists the user's Gmail labels.
     """
@@ -36,16 +40,19 @@ def googlemain():
         # Save the credentials for the next run
         with open('token.pickle', 'wb') as token:
             pickle.dump(creds, token)
-        print('printing creds')    
+        print("printing creds")   
+        
+        plog.pprint(creds) 
         print(creds) 
+
         service = build('gmail', 'v1', credentials=creds)
 
-        Call the Gmail API
+        # Call the Gmail API
         results = service.users().labels().list(userId='me').execute() 
         print('printing creds')    
 
-        print(service.users()) 
-        print(results) 
+        plog.pprint(service.users()) 
+        plog.pprint(results) 
     return True
     #
     # service = build('gmail', 'v1', credentials=creds)

@@ -5,12 +5,12 @@ from appsite.models import Users, Consultants, Category,Field
 class UsersSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Users
-        fields = ('username', 'city', 'last_login_date' )
+        fields = ('username', 'city',   )
 
 class ConsultantsSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Consultants
-        fields = ('username', 'city', 'last_login_date' )
+        fields = ('username', 'city',)
 
 
 class CategorySerializer(serializers.HyperlinkedModelSerializer):

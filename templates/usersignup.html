@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div id="gallery">
+	 <h1>User Signup</h1> 
+      <form method="post" action="/userregister" >
+        <fieldset>
+          {% csrf_token %}   
+          
+          {{ form }}
+          <br><br>
+          <input type="submit" value="register">
+        </fieldset>
+      </form>
+</div>
+
+    
+{% endblock %}
