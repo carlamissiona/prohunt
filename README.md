@@ -1,2 +1,2 @@
 # prohunt
-# prohunt rsvp meetings app
+# prohunt consultants services & reservations video meetings app
